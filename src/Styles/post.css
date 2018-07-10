@@ -1,0 +1,39 @@
+.main{
+    width:80%;
+    margin:auto;
+}
+
+.post{
+    width:100%;
+    min-height: 60vh;
+    margin:auto;
+    text-align: justify;
+    background-color:#dee0e2;
+    border-radius:5px;
+}
+.post-title-space{
+    display:flex;
+    justify-content: space-between
+}
+#title{
+    margin: 4% 0;
+}
+#category{
+    direction: rtl;
+    display: flex;
+    margin-right: 10%;
+}
+.back-to-posts{
+    display:flex;
+    padding: 3% 0; 
+}
+.remove-edit-btn{
+    display:flex;
+    padding-bottom: 5%;
+}
+.edit-margin{
+    margin-left: 5%;
+}
+#post-text{
+    padding: 3%;
+}

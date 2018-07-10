@@ -1,0 +1,25 @@
+.postInPosts{
+    display:flex;
+    justify-content: space-between;
+}
+.post-outer-div{
+    width:100%;
+    background-color: #dee0e2;
+    margin: 2% 0;
+    padding: 2%;
+    border-radius:5px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.post-in-posts-createdAt{
+    align-self: flex-end;
+}
+.post-in-posts-category{
+    margin-bottom:0;
+    text-align:left;
+}
+.post-in-posts-title{
+    text-align:left;
+}
