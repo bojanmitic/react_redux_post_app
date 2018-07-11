@@ -35,7 +35,7 @@ class Post extends React.Component{
                     />
                     <button   
                         className='btn edit-margin'
-                        onClick = {()=>this.props.history.push(`/edit/:${post.id}`)}
+                        onClick = {()=>this.props.history.push(`/edit/${post.id}`)}
                     >
                         Edit Post
                     </button>
@@ -46,7 +46,7 @@ class Post extends React.Component{
    
 }
 
-const mapStateToProps = (state, props)=>{
+const mapStateToProps = (state)=>{
     return{
          post: state
     }

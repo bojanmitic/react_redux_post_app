@@ -15,10 +15,10 @@ class App extends Component {
         <div className="App">
         <Header />
         <Switch>
-            <Route path='/' component={Posts} exact={true}/>
-            <Route path='/create' component={AddPost}/>
-            <Route exact path='/edit/:id' component={EditPost} />
-            <Route exact path='/:id' component={Post}/>  
+            <Route path={`${process.env.PUBLIC_URL}/`} component={Posts} exact={true}/>
+            <Route path={`${process.env.PUBLIC_URL}/create`}  component={AddPost}/> 
+            <Route exact path={`${process.env.PUBLIC_URL}/edit/:id`}  component={EditPost} />
+            <Route exact path={`${process.env.PUBLIC_URL}/:id`}  component={Post}/>  
         </Switch>
         </div>
       </BrowserRouter>

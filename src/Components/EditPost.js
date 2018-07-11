@@ -4,38 +4,31 @@ import { PostInput } from './PostInput';
 import { editPost } from '../Actions/postActions';
 
 class  EditPost extends React.Component {
-    handleSubmit = (postToEdit)=>{
+    handleSubmit = (post)=>{
        
-         this.props.editPost(postToEdit.id, postToEdit);
+         this.props.editPost(this.props.post.id, post);
          this.props.history.push('/');
-         console.log(postToEdit);
     }
     render(){
-        const url = this.props.match.url.slice(7);
-        const postToEdit = this.props.posts.find((post)=> post.id === url);
-        //const postId = postToEdit.id;
-        console.log('postToEdit': postToEdit, this.props.posts.id) 
-        
         return(
             <div>
                 <PostInput 
-                   post={postToEdit}
+                   post={this.props.post}
                    onSubmit = {this.handleSubmit}
                 />
-    
             </div>
         )
     }   
 }
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state, props)=>{
     return {
-        posts: state
+        post: state.find((post)=>post.id === props.match.params.id)
     }
 }
-const mapDispatchToProps= (dispatch)=>{
+const mapDispatchToProps= (dispatch,props)=>{
     return {
-        editPost: (postId, postToEdit)=>dispatch(editPost(postToEdit.id, postToEdit))
+        editPost: (id, post)=>dispatch(editPost(id, post))
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(EditPost);
+export default connect(mapStateToProps, mapDispatchToProps)(EditPost);
